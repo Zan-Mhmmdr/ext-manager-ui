@@ -10,10 +10,12 @@ fetch("data.json")
       card.innerHTML = `
             <div>
               <div class="title">
-                <div class="icon" style="background:${ext.color};"></div>
-                <h3>${ext.name}</h3>
+                <img src="${ext.logo}" />
+                <div class="title-text">
+                    <h3>${ext.name}</h3>
+                    <p>${ext.description}</p>
+                </div>
               </div>
-              <p>${ext.description}</p>
             </div>
             <div class="actions">
               <button class="remove-btn">Remove</button>

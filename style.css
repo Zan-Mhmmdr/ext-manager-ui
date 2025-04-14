@@ -70,7 +70,7 @@ header img:first-child {
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-    gap: 20px;
+    gap: 10px;
     margin: 0 100px 100px;
 }
 
@@ -86,15 +86,28 @@ header img:first-child {
 
 .card .title {
     display: flex;
-    align-items: center;
+    align-items: start;
     gap: 10px;
     margin-bottom: 10px;
+}
+
+.card .title h3 {
+    margin: 0 0 0 5px;
+}
+
+.card .title p {
+    margin: 6px 0 0 5px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #8490a2;
+
 }
 
 .actions {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 22px;
 }
 
 .actions button {
@@ -109,7 +122,7 @@ header img:first-child {
 }
 
 .actions button:hover {
-    background-color: hsl(200, 60%, 99%)    ;
+    background-color: hsl(200, 60%, 99%);
     color: hsl(226, 25%, 17%);
 
     transform: scale(1.05);
@@ -137,9 +150,10 @@ header img:first-child {
 }
 
 .toggle.active {
-    background-color: hsl(3, 86%, 64%); /* oranye */
-  }
-  
+    background-color: hsl(3, 86%, 64%);
+    /* oranye */
+}
+
 .toggle.active::before {
     transform: translateX(16px);
 }
