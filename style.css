@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
+:root {
+    --toggle-off: #4b5563;
+    /* abu-abu gelap */
+    --toggle-on: #f87171;
+
+    /* merah muda (red-400 Tailwind) */
+
+    --toggle-on: #fb923c;
+    /* oranye (orange-400 Tailwind) */
+
+
+}
+
 body {
     font-family: 'Noto Sans', sans-serif;
     background-color: hsl(225, 56%, 13%);
@@ -76,6 +89,59 @@ header img:first-child {
     align-items: center;
     gap: 10px;
     margin-bottom: 10px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.actions button {
+    background-color: hsl(200, 60%, 99%);
+    color: hsl(226, 25%, 17%);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all ease 0.2s;
+}
+
+.actions button:hover {
+    background-color: hsl(200, 60%, 99%)    ;
+    color: hsl(226, 25%, 17%);
+
+    transform: scale(1.05);
+}
+
+.toggle {
+    width: 36px;
+    height: 20px;
+    background-color: var(--toggle-off);
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.toggle::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+}
+
+.toggle.active {
+    background-color: hsl(3, 86%, 64%); /* oranye */
+  }
+  
+.toggle.active::before {
+    transform: translateX(16px);
 }
 
 
