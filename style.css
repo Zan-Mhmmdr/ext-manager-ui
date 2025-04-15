@@ -93,7 +93,8 @@ header img:first-child {
 }
 
 .card .title h3 {
-    margin: 0 0 0 5px;
+    margin: 0;
+    margin-left: 5px;
 }
 
 .card .title p {
