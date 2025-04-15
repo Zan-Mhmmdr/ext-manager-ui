@@ -61,10 +61,10 @@ header img:first-child {
     cursor: pointer;
 }
 
-.nav-list ul li a:active {
-    background-color: hsl(200, 60%, 99%);
+.nav-list ul li a.active {
+    background-color: hsl(3, 86%, 64%);
     color: hsl(226, 25%, 17%);
-    transition: none;
+    font-weight: 500;
 }
 
 .grid {
@@ -78,6 +78,7 @@ header img:first-child {
     background-color: hsl(226, 25%, 17%);
     padding: 20px;
     border-radius: var(--radius);
+    border: 1px solid hsl(199, 9%, 40%);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -111,10 +112,10 @@ header img:first-child {
 }
 
 .actions button {
-    background-color: hsl(200, 60%, 99%);
-    color: hsl(226, 25%, 17%);
-    border: none;
-    padding: 10px 20px;
+    background-color: hsl(226, 25%, 17%);
+    outline: white;
+    color: hsl(200, 60%, 99%);
+    padding: 8px 16px;
     border-radius: 16px;
     cursor: pointer;
     font-size: 14px;

@@ -1,4 +1,6 @@
 const container = document.getElementById("extensionsContainer");
+const navLinks = document.querySelectorAll(".nav-list ul li a");
+console.log(navLinks)
 
 fetch("data.json")
   .then((response) => response.json())
@@ -19,7 +21,7 @@ fetch("data.json")
             </div>
             <div class="actions">
               <button class="remove-btn">Remove</button>
-              <div class="toggle ${ext.active ? "active" : ""}" data-id="${
+              <div class="toggle ${ext.isActive ? "active" : ""}" data-id="${
         ext.id
       }"></div>
             </div>
@@ -27,20 +29,29 @@ fetch("data.json")
       container.appendChild(card);
     });
 
-    // Tambahkan event listener toggle setelah render
+    // Event listener toggle
     document.querySelectorAll(".toggle").forEach((toggle) => {
       toggle.addEventListener("click", () => {
         toggle.classList.toggle("active");
 
-        // Update data array sesuai id
         const id = parseInt(toggle.getAttribute("data-id"));
         const ext = extensions.find((item) => item.id === id);
         if (ext) {
-          ext.active = toggle.classList.contains("active");
+          ext.isActive = toggle.classList.contains("active"); // ✅ ini diperbaiki
           console.log(
-            `"${ext.name}" is now ${ext.active ? "active" : "inactive"}`
+            `"${ext.name}" is now ${ext.isActive ? "active" : "inactive"}`
           );
         }
       });
     });
   });
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    // hapus .active dari semua link
+    navLinks.forEach((l) => l.classList.remove("active"));
+
+    // tambahkan .active ke link yang diklik
+    link.classList.add("active");
+  });
+});
